@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "description": "",
-  "author": "",
+  "description": "Introduction to the Basic Node and Express Challenges",
+  "author": "Amit Burde",
   "license": "ISC"
 }
