@@ -7,8 +7,9 @@
     "express": "^4.14.0",
     "fcc-express-bground": "git+https://github.com/freeCodeCamp/fcc-express-bground-pkg.git"
   },
-   "scripts": {
-    "start": "node myApp.js"
+  "main": "server.js", 
+  "scripts": {
+    "start": "node server.js"
   },
   "description": "Introduction to the Basic Node and Express Challenges",
   "author": "Amit Burde",
