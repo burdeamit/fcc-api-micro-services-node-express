@@ -35,10 +35,10 @@ app.get('/:word/echo', (req, res, next) => {
 // name API Get Query Parameter Input from the Client
 
 app.get('/name', (req, res, next) => {
-    let { first: firstName, last: lastName } = req.query;
+    let { first: firstname, last: lastname } = req.query;
 
     res.json({
-        name : `${firstName} ${lastName}`,
+        name : `${firstname} ${lastname}`,
     })
 })
 
