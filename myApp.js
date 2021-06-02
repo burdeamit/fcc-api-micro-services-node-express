@@ -1,5 +1,6 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 require('dotenv').config()
 
 
@@ -11,6 +12,26 @@ app.use((req, res, next) => {
   next()
 })
 
+
+// Middleware to server static files from public folder
+app.use("/public", express.static(__dirname + '/public'));
+
+
+// body parser
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Sending Response to Get Method
+// app.get('/', (req, res) => {
+//     res.send('Hello Express');
+// })
+
+
+// index route response using a static file
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/views/index.html');
+})
 
 // chained middlewares 
 app.get('/now', (req, res, next) => {
@@ -50,20 +71,7 @@ console.log("Hello World");
 
 
 
-// Middleware to server static files from public folder
-app.use("/public", express.static(__dirname + '/public'));
 
-
-// Sending Response to Get Method
-// app.get('/', (req, res) => {
-//     res.send('Hello Express');
-// })
-
-
-// index route response using a static file
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
-})
 
 // JSON API
 app.get('/json', (req, res) => {
