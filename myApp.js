@@ -24,15 +24,23 @@ app.get('/now', (req, res, next) => {
   });
 });
 
-
-app.get('/:word/:echo', (req, res, next) => {
+// echo word Get Route Parameter Input from the Client
+app.get('/:word/echo', (req, res, next) => {
     let word = req.params.word;
     res.json({
         echo : word,
     })
 })
 
+// name API Get Query Parameter Input from the Client
 
+app.get('/name', (req, res, next) => {
+    let { first: firstName, last: lastName } = req.query;
+
+    res.json({
+        name : `${firstName} ${lastName}`,
+    })
+})
 
 
 
